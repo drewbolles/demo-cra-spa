@@ -1,7 +1,6 @@
 import React from 'react';
 import { render } from '../utils/test-utils';
 import Routes from './Routes';
-import { ReposProvider } from '../components/ReposProvider/ReposProvider';
 
 test('renders the routes', () => {
   const { getByTestId } = render(<Routes />);
