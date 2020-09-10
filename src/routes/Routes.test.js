@@ -4,7 +4,7 @@ import Routes from './Routes';
 
 test('renders the routes', () => {
   const { getByTestId } = render(<Routes />);
-  // expect it to render the home route. this test is directly
-  // tied to the test id of the home route
-  expect(getByTestId('route-home')).toBeInTheDocument();
+  // routes are lazy loaded, so by default the loading component
+  // is rendered
+  expect(getByTestId('loading')).toBeInTheDocument();
 });
