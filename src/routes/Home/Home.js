@@ -15,13 +15,6 @@ export default function Home() {
     <div data-testid="route-home">
       <h1 className="text-2xl mb-4">Home Page</h1>
       <div>
-        <button
-          onClick={() => {
-            throw new Error('throw');
-          }}
-        >
-          Throw
-        </button>
         <h2 className="text-xl mb-2">My GitHub Repos</h2>
         {status === 'loading' && (
           <div>
