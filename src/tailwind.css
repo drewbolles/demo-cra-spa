@@ -1,0 +1,12 @@
+/**
+ * Tailwind CSS imports
+ *
+ * Without ejecting from create react app, the best way to build the
+ * tailwind css file is via a node script.
+ *
+ * DO NOT add any other styles to this file.
+ *
+ */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
