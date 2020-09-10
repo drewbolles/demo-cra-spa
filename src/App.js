@@ -1,22 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { MdHome, MdAccountCircle } from 'react-icons/md';
 
 import Routes from './routes/Routes';
 import Container from './components/Container/Container';
 import NavLink from './components/NavLink/NavLink';
-import { ReposProvider } from './components/ReposProvider/ReposProvider';
 
 function App() {
   return (
     <div className="app flex flex-col min-h-screen" data-testid="app">
       <header className="app-header shadow">
         <Container className="flex justify-between items-center">
-          <span className="flex items-center">
+          <Link to="/" className="flex items-center">
             <MdHome className="mr-1" />
             <span className="uppercase">
               My <span className="font-bold">SPA</span>
             </span>
-          </span>
+          </Link>
           <div className="flex items-center">
             <nav className="flex space-x-4">
               <NavLink to="/">Home</NavLink>
@@ -32,9 +32,7 @@ function App() {
       </header>
       <main className="pt-4 flex-grow">
         <Container>
-          <ReposProvider>
-            <Routes />
-          </ReposProvider>
+          <Routes />
         </Container>
       </main>
       <footer className="py-4 bg-gray-100 border-t border-gray-200">

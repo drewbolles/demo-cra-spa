@@ -19,10 +19,10 @@ ReactDOM.render(
       }}
       fallbackRender={({ resetErrorBoundary }) => (
         <div className="text-center">
-          <h2 className="text-2xl">Opps! Something went wrong</h2>
+          <h2 className="text-2xl mb-4">Opps! Something went wrong</h2>
           <button
             onClick={resetErrorBoundary}
-            className="inline-flex items-center h-12 px-6 bg-blue-700 text-white font-bold rounded-sm shadow"
+            className="inline-flex items-center h-12 px-6 bg-blue-700 text-white text-lg font-bold rounded-sm shadow"
           >
             Retry
           </button>
