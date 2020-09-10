@@ -15,7 +15,12 @@ export default function Home() {
           <ul className="list-disc">
             {repos.map((repo) => (
               <li key={repo.id}>
-                <a href={repo.url} className="text-blue-700 hover:underline">
+                <a
+                  href={repo.html_url}
+                  className="text-blue-700 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {repo.name}
                 </a>
               </li>
