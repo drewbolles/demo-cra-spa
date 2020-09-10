@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import { ErrorBoundary } from 'react-error-boundary';
+import { queryCache } from 'react-query';
 
 import App from './App';
 
@@ -8,9 +10,29 @@ import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <ErrorBoundary
+      onReset={() => {
+        queryCache.resetErrorBoundaries();
+      }}
+      onError={(error, stackTrace) => {
+        // TODO: Send the error to Sentry
+      }}
+      fallbackRender={({ resetErrorBoundary }) => (
+        <div className="text-center">
+          <h2 className="text-2xl">Opps! Something went wrong</h2>
+          <button
+            onClick={resetErrorBoundary}
+            className="inline-flex items-center h-12 px-6 bg-blue-700 text-white font-bold rounded-sm shadow"
+          >
+            Retry
+          </button>
+        </div>
+      )}
+    >
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </ErrorBoundary>
   </React.StrictMode>,
   document.getElementById('root')
 );
