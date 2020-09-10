@@ -25,7 +25,7 @@
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged",
-      "pre-push": "npm run lint:fix && npm run test -- --coverage"
+      "pre-push": "npm run lint:fix && CI=true npm run test"
     }
   },
   "eslintConfig": {
