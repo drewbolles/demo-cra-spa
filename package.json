@@ -20,7 +20,8 @@
     "eject": "react-scripts eject",
     "build:tailwind": "tailwindcss build src/tailwind.css -o public/styles.css",
     "lint": "eslint .",
-    "lint:fix": "npm run lint -- --fix"
+    "lint:fix": "npm run lint -- --fix",
+    "cypress:open": "cypress open"
   },
   "husky": {
     "hooks": {
@@ -29,7 +30,10 @@
     }
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": [
+      "react-app",
+      "plugin:cypress/recommended"
+    ]
   },
   "browserslist": {
     "production": [
@@ -50,6 +54,7 @@
     "@testing-library/user-event": "^7.2.1",
     "babel-eslint": "^10.1.0",
     "cypress": "^5.1.0",
+    "eslint-plugin-cypress": "^2.11.1",
     "husky": "^4.3.0",
     "prettier": "^2.1.1",
     "pretty-quick": "^3.0.0",
