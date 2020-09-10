@@ -2,6 +2,15 @@
 
 Normally I'd prefer to use NextJS to build a web app, but in the case that the project needs to be a SPA with absolutely no SSR component, then this repo represents the ideal starting point.
 
+### Technology
+
+- Create React App
+- Tailwind CSS
+- Jest
+- Cypress
+- React Icons
+- React Query
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
