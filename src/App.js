@@ -4,6 +4,7 @@ import { MdHome, MdAccountCircle } from 'react-icons/md';
 import Routes from './routes/Routes';
 import Container from './components/Container/Container';
 import NavLink from './components/NavLink/NavLink';
+import { ReposProvider } from './components/ReposProvider/ReposProvider';
 
 function App() {
   return (
@@ -31,7 +32,9 @@ function App() {
       </header>
       <main className="pt-4 flex-grow">
         <Container>
-          <Routes />
+          <ReposProvider>
+            <Routes />
+          </ReposProvider>
         </Container>
       </main>
       <footer className="py-4 bg-gray-100 border-t border-gray-200">

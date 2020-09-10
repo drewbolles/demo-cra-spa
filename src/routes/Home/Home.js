@@ -1,16 +1,9 @@
 import React from 'react';
-import { useQuery } from 'react-query';
 
-async function fetchRepos() {
-  const response = await fetch('https://api.github.com/users/drewbolles/repos');
-  return response.json();
-}
+import { useRepos } from '../../components/ReposProvider/ReposProvider';
 
 export default function Home() {
-  const { data: repos, status } = useQuery('repos', fetchRepos, {
-    useErrorBoundary: true,
-  });
-
+  const { repos, status } = useRepos();
   return (
     <div data-testid="route-home">
       <h1 className="text-2xl mb-4">Home Page</h1>
